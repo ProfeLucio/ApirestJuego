@@ -3,6 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Juego;
+use App\Models\User;
+use Illuminate\Support\Str;
+use App\Models\Partida;
 
 class Juego extends Model
 {

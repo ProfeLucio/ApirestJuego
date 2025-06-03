@@ -6,6 +6,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
+use App\Models\Juego;
+use App\Models\Partida;
 
 class User extends Authenticatable
 {
@@ -44,5 +47,17 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function juego()
+    {
+        return $this->belongsTo(Juego::class);
+    }
+
+    public function partidas()
+    {
+        return $this->belongsToMany(Partida::class)
+                    ->withPivot('aciertos')
+                    ->withTimestamps();
     }
 }

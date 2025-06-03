@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('partidas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('juego_id')
-                  ->constrained('juegos')
-                  ->onDelete('cascade');
+            $table->uuid('juego_id');
+            $table->foreign('juego_id')->references('id')->on('juegos')->onDelete('cascade');
             $table->timestamp('fecha');        // Fecha y hora de la partida
             $table->integer('tiempo')->nullable(); // Tiempo en segundos (opcional)
             $table->string('nivel')->nullable();   // Nivel jugado (opcional)

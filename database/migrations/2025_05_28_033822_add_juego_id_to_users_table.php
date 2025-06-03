@@ -12,10 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->foreignId('juego_id')
-                  ->after('id')               // Colocar tras el id
-                  ->constrained('juegos')     // Llave foránea a juegos.id
-                  ->onDelete('cascade');      // Borra usuarios si se borra el juego
+            $table->uuid('juego_id')
+                  ->after('id')
+                  ->nullable()
+                  ->constrained('juegos')
+                  ->onDelete('cascade');
         });
     }
 

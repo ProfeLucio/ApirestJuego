@@ -12,12 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('juegos', function (Blueprint $table) {
-            $table->id();                      // Clave primaria
+            $table->uuid('id')->primary();
             $table->string('titulo');          // Nombre legible del juego
             $table->text('autores');           // Lista de autores (JSON o texto)
             $table->boolean('activo')->default(true); // Soft delete lógico
             $table->timestamps();              // created_at / updated_at
-            // $table->softDeletes();          // Si prefieres borrado suave
         });
     }
 

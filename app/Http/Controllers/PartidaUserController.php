@@ -52,6 +52,7 @@ class PartidaUserController extends Controller
             'partida_id' => 'required|exists:partidas,id',
             'user_id'    => 'required|exists:users,id',
             'aciertos'   => 'required|integer|min:0',
+            'tiempo'   => 'required|integer|min:0',
             // opcionales:
             // 'errores'       => 'nullable|integer|min:0',
             // 'tiempo_jugador'=> 'nullable|integer|min:0',
@@ -98,6 +99,7 @@ class PartidaUserController extends Controller
     {
         $data = $request->validate([
             'aciertos'   => 'sometimes|integer|min:0',
+            'tiempo'   => 'sometimes|integer|min:0',
             // 'errores'       => 'nullable|integer|min:0',
             // 'tiempo_jugador'=> 'nullable|integer|min:0',
         ]);

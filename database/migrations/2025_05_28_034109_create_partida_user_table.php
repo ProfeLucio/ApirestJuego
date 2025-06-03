@@ -19,7 +19,9 @@ return new class extends Migration
             $table->foreignId('user_id')
                   ->constrained('users')
                   ->onDelete('cascade');
-            $table->integer('aciertos');       // Aciertos por jugador (obligatorio)
+            $table->integer('aciertos');
+            $table->integer('tiempo');
+            // Aciertos por jugador (obligatorio)
             // $table->integer('errores')->default(0); // Opcional: contar fallos
             $table->timestamps();
         });

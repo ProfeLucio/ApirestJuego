@@ -35,8 +35,8 @@ class PartidaController extends Controller
      *     @OA\RequestBody(
      *         required=true,
      *         @OA\JsonContent(
-     *             required={"juego_id", "fecha"},
-     *             @OA\Property(property="juego_id", type="integer"),
+     *             required={"juego_id", "string"},
+     *             @OA\Property(property="juego_id", type="string"),
      *             @OA\Property(property="fecha", type="string", format="date"),
      *             @OA\Property(property="tiempo", type="integer", format="int32", description="Tiempo en segundos"),
      *             @OA\Property(property="nivel", type="string", maxLength=100, description="Nivel de dificultad")
@@ -87,7 +87,7 @@ class PartidaController extends Controller
      *     @OA\RequestBody(
      *         required=true,
      *         @OA\JsonContent(
-     *             required={"juego_id", "fecha"},
+     *             required={"juego_id", "string"},
      *             @OA\Property(property="juego_id", type="integer"),
      *             @OA\Property(property="fecha", type="string", format="date"),
      *             @OA\Property(property="tiempo", type="integer", format="int32", description="Tiempo en segundos"),

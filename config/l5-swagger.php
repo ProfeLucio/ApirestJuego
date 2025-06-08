@@ -97,7 +97,7 @@ return [
             /*
              * Edit to set the api's base path
              */
-            'base' => env('L5_SWAGGER_BASE_PATH', '/'),
+            'base' => env('L5_SWAGGER_BASE_PATH', '/api'),
 
             /*
              * Absolute path to directories that should be excluded from scanning

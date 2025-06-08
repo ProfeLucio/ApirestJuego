@@ -42,7 +42,7 @@ class UserController extends Controller
      *             @OA\Property(property="email", type="string", format="email"),
      *             @OA\Property(property="password", type="string", format="password"),
      *             @OA\Property(property="password_confirmation", type="string", format="password"),
-     *             @OA\Property(property="juego_id", type="integer")
+     *             @OA\Property(property="juego_id", type="string")
      *         )
      *     ),
      *     @OA\Response(response=201, description="Creado")
@@ -108,7 +108,7 @@ class UserController extends Controller
      *             @OA\Property(property="name", type="string"),
      *             @OA\Property(property="email", type="string", format="email"),
      *             @OA\Property(property="password", type="string", format="password"),
-     *             @OA\Property(property="juego_id", type="integer")
+     *             @OA\Property(property="juego_id", type="string")
      *         )
      *     ),
      *     @OA\Response(response=200, description="Actualizado")

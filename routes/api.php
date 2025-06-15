@@ -23,4 +23,14 @@ Route::get('/user', function (Request $request) {
 Route::apiResource('juegos',   JuegoController::class);
 Route::apiResource('users',    UserController::class);
 Route::apiResource('partidas', PartidaController::class);
-Route::apiResource('aciertos', PartidaUserController::class);
+//Route::apiResource('aciertos', PartidaUserController::class);
+Route::prefix('aciertos')->group(function () {
+    Route::get('/', [PartidaUserController::class, 'index']);
+    Route::post('/', [PartidaUserController::class, 'store']);
+    Route::get('/{id}', [PartidaUserController::class, 'show']);
+    Route::put('/{id}', [PartidaUserController::class, 'update']);
+    Route::delete('/{id}', [PartidaUserController::class, 'destroy']);
+    Route::get('/partida/{partida_id}', [PartidaUserController::class, 'porPartida']);
+    Route::get('/usuario/{user_id}', [PartidaUserController::class, 'porUsuario']);
+    Route::get('/usuario/{user_id}/partida/{partida_id}', [PartidaUserController::class, 'porUsuarioYPartida']);
+});

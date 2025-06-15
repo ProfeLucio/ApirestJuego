@@ -20,9 +20,9 @@ use App\Http\Controllers\PartidaUserController;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
-Route::apiResource('juegos',   JuegoController::class);
-Route::apiResource('users',    UserController::class);
-Route::apiResource('partidas', PartidaController::class);
+Route::apiResource('juegos', JuegoController::class)->except(['destroy', 'store']);
+Route::apiResource('users', UserController::class)->except(['destroy']);
+Route::apiResource('partidas', PartidaController::class)->except(['destroy']);
 //Route::apiResource('aciertos', PartidaUserController::class);
 Route::prefix('aciertos')->group(function () {
     Route::get('/', [PartidaUserController::class, 'index']);
